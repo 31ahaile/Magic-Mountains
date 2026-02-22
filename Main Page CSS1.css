@@ -38,6 +38,7 @@ body {
   width: 260px;
   height: 180px;
   object-fit: cover;
+  cursor: pointer;
 }
 
 .photo:hover {
