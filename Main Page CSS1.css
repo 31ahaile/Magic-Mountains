@@ -6,7 +6,6 @@ body {
   padding: 20px;
 }
 
-
 .title {
   color: #2b618e;
   font-size: 36px;
@@ -26,7 +25,6 @@ body {
   color: #444;
 }
 
-
 .gallery {
   max-width: 900px;
   margin: auto;
@@ -43,7 +41,6 @@ body {
   padding: 10px;
   border-radius: 18px;
 }
-
 
 .photo {
   border-radius: 16px;
@@ -67,7 +64,6 @@ body {
   color: #2b618e;
 }
 
-
 .popup {
   display: none;
   position: fixed;
@@ -88,6 +84,7 @@ body {
   text-align: center;
   position: relative;
   box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+  animation: popupFade 0.3s ease;
 }
 
 .popup-photo {
@@ -118,11 +115,7 @@ audio {
 
 .close:hover {
   color: black;
-}00%;
 }
-
-
-animation: popupFade 0.3s ease;
 
 @keyframes fadeIn {
   from { opacity: 0; transform: scale(0.95); }
@@ -139,4 +132,3 @@ animation: popupFade 0.3s ease;
     opacity: 1;
   }
 }
-
