@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <title>Nature Soundscapes</title>
   <link rel="stylesheet" href="Main Page CSS1.css">
@@ -9,6 +10,7 @@
 
 <header>
   <h1 class="title">Nature Soundscapes</h1>
+
   <p class="intro">
     Welcome! These are photos from my travels, each paired with sounds from nature
     to help bring each moment to life. Take a look around and enjoy.
@@ -16,20 +18,25 @@
 </header>
 
 <main>
+
 <h2 class="subtitle">My Travel Photos</h2>
 
 <section class="gallery">
 
+
+<!-- Row 1 -->
 <div class="row">
 
 <div class="photo-card">
-<img class="photo" src="Jackson.jpg"
+<img class="photo"
+src="Jackson.jpg"
 onclick="openPopup('Jackson Hole','Jackson.jpg','Look at the amazing Teton Mountains')">
 <p class="caption">Jackson Hole</p>
 </div>
 
 <div class="photo-card">
-<img class="photo" src="Costa Rica.jpg"
+<img class="photo"
+src="Costa Rica.jpg"
 onclick="openPopup('Costa Rica','Costa Rica.jpg','Enjoy the rainforest of Liberia')">
 <p class="caption">Costa Rica</p>
 </div>
@@ -37,16 +44,19 @@ onclick="openPopup('Costa Rica','Costa Rica.jpg','Enjoy the rainforest of Liberi
 </div>
 
 
+<!-- Row 2 -->
 <div class="row">
 
 <div class="photo-card">
-<img class="photo" src="Tahoe.jpg"
+<img class="photo"
+src="Tahoe.jpg"
 onclick="openPopup('Tahoe','Tahoe.jpg','Relax with the lake waves and snowy beach')">
 <p class="caption">Tahoe</p>
 </div>
 
 <div class="photo-card">
-<img class="photo" src="Charleston.jpg"
+<img class="photo"
+src="Charleston.jpg"
 onclick="openPopup('Charleston','Charleston.jpg','Experience the sea islands just outside of Charleston')">
 <p class="caption">Charleston</p>
 </div>
@@ -54,26 +64,31 @@ onclick="openPopup('Charleston','Charleston.jpg','Experience the sea islands jus
 </div>
 
 
+<!-- Row 3 -->
 <div class="row">
 
 <div class="photo-card">
-<img class="photo" src="Italy.jpg"
+<img class="photo"
+src="Italy.jpg"
 onclick="openPopup('Italy','Italy.jpg','Look over the beautiful valleys of Tuscany','Tuscany.wav')">
 <p class="caption">Italy</p>
 </div>
 
 <div class="photo-card">
-<img class="photo" src="Snoqualmie.jpg"
-onclick="openPopup('Snoqualmie','Snoqualmie.jpg','View the lovely landscapes of Washington','Snoqualmie.wav')">
+<img class="photo"
+src="Snoqualmie.jpg"
+onclick="openPopup('Snoqualmie','Snoqualmie.jpg','View the lovely landscapes of Washington')">
 <p class="caption">Snoqualmie</p>
 </div>
 
 </div>
 
 </section>
+
 </main>
 
 
+<!-- Popup -->
 <div id="popup" class="popup">
 
 <div class="popup-content">
@@ -87,7 +102,7 @@ onclick="openPopup('Snoqualmie','Snoqualmie.jpg','View the lovely landscapes of 
 <p id="popup-text"></p>
 
 <audio id="popup-audio" controls>
-<source id="popup-audio-source" src="" type="audio/mpeg">
+<source id="popup-audio-source" src="" type="audio/wav">
 </audio>
 
 </div>
@@ -95,33 +110,8 @@ onclick="openPopup('Snoqualmie','Snoqualmie.jpg','View the lovely landscapes of 
 </div>
 
 
-<script>
-
-function openPopup(title,image,text,audio){
-
-document.getElementById("popup-title").innerText = title;
-
-document.getElementById("popup-image").src = image;
-
-document.getElementById("popup-text").innerText = text;
-
-document.getElementById("popup-audio-source").src = "audio/" + audio;
-
-document.getElementById("popup-audio").load();
-
-document.getElementById("popup").style.display = "flex";
-
-}
-
-function closePopup(){
-
-document.getElementById("popup").style.display = "none";
-
-document.getElementById("popup-audio").pause();
-
-}
-
-</script>
+<!-- LINK JAVASCRIPT FILE -->
+<script src="script.js"></script>
 
 </body>
 </html>
