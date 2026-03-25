@@ -88,7 +88,7 @@ onclick="openPopup('Snoqualmie','Snoqualmie.jpg','View the lovely landscapes of 
 <p id="popup-text"></p>
 
 <audio id="popup-audio" controls>
-<source id="popup-audio-source" src="" type="audio/mpeg">
+<source id="popup-audio-source" src="" type="audio/wav">
 </audio>
 
 </div>
@@ -106,7 +106,7 @@ document.getElementById("popup-image").src = image;
 
 document.getElementById("popup-text").innerText = text;
 
-document.getElementById("popup-audio-source").src = "audio/" + audio;
+document.getElementById("popup-audio-source").src = audio;
 
 document.getElementById("popup-audio").load();
 
