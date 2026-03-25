@@ -10,7 +10,6 @@
 
 <header>
   <h1 class="title">Nature Soundscapes</h1>
-
   <p class="intro">
     Welcome! These are photos from my travels, each paired with sounds from nature
     to help bring each moment to life. Take a look around and enjoy.
@@ -18,74 +17,109 @@
 </header>
 
 <main>
-
 <h2 class="subtitle">My Travel Photos</h2>
 
 <section class="gallery">
 
 <div class="row">
-  <div class="photo-card">
-    <img class="photo" src="Jackson.jpg"
-    onclick="openPopup('Jackson Hole','Jackson.jpg','Look at the amazing Teton Mountains', null)">
-    <p class="caption">Jackson Hole</p>
-  </div>
 
-  <div class="photo-card">
-    <img class="photo" src="Costa Rica.jpg"
-    onclick="openPopup('Costa Rica','Costa Rica.jpg','Enjoy the rainforest of Liberia', null)">
-    <p class="caption">Costa Rica</p>
-  </div>
+<div class="photo-card">
+<img class="photo" src="Jackson.jpg"
+onclick="openPopup('Jackson Hole','Jackson.jpg','Look at the amazing Teton Mountains')">
+<p class="caption">Jackson Hole</p>
 </div>
 
-<div class="row">
-  <div class="photo-card">
-    <img class="photo" src="Tahoe.jpg"
-    onclick="openPopup('Tahoe','Tahoe.jpg','Relax with the lake waves and snowy beach', null)">
-    <p class="caption">Tahoe</p>
-  </div>
-
-  <div class="photo-card">
-    <img class="photo" src="Charleston.jpg"
-    onclick="openPopup('Charleston','Charleston.jpg','Experience the sea islands just outside of Charleston', null)">
-    <p class="caption">Charleston</p>
-  </div>
+<div class="photo-card">
+<img class="photo" src="Costa Rica.jpg"
+onclick="openPopup('Costa Rica','Costa Rica.jpg','Enjoy the rainforest of Liberia')">
+<p class="caption">Costa Rica</p>
 </div>
 
-<div class="row">
-  <div class="photo-card">
-    <img class="photo" src="Italy.jpg"
-    onclick="openPopup('Italy','Italy.jpg','Look over the beautiful valleys of Tuscany','Tuscany.wav')">
-    <p class="caption">Italy</p>
-  </div>
+</div>
 
-  <div class="photo-card">
-    <img class="photo" src="Snoqualmie.jpg"
-    onclick="openPopup('Snoqualmie','Snoqualmie.jpg','View the lovely landscapes of Washington', null)">
-    <p class="caption">Snoqualmie</p>
-  </div>
+
+<div class="row">
+
+<div class="photo-card">
+<img class="photo" src="Tahoe.jpg"
+onclick="openPopup('Tahoe','Tahoe.jpg','Relax with the lake waves and snowy beach')">
+<p class="caption">Tahoe</p>
+</div>
+
+<div class="photo-card">
+<img class="photo" src="Charleston.jpg"
+onclick="openPopup('Charleston','Charleston.jpg','Experience the sea islands just outside of Charleston')">
+<p class="caption">Charleston</p>
+</div>
+
+</div>
+
+
+<div class="row">
+
+<div class="photo-card">
+<img class="photo" src="Italy.jpg"
+onclick="openPopup('Italy','Italy.jpg','Look over the beautiful valleys of Tuscany','Tuscany.wav')">
+<p class="caption">Italy</p>
+</div>
+
+<div class="photo-card">
+<img class="photo" src="Snoqualmie.jpg"
+onclick="openPopup('Snoqualmie','Snoqualmie.jpg','View the lovely landscapes of Washington','Snoqualmie.wav')">
+<p class="caption">Snoqualmie</p>
+</div>
+
 </div>
 
 </section>
-
 </main>
 
-<!-- POPUP -->
+
 <div id="popup" class="popup">
-  <div class="popup-content">
-    <span class="close" onclick="closePopup()">&times;</span>
-    
-    <h2 id="popup-title"></h2>
-    <img id="popup-image" class="popup-photo">
-    <p id="popup-text"></p>
 
-    <audio id="popup-audio" controls style="display:none;">
-      <source id="popup-audio-source" src="" type="audio/wav">
-    </audio>
+<div class="popup-content">
 
-  </div>
+<span class="close" onclick="closePopup()">&times;</span>
+
+<h2 id="popup-title"></h2>
+
+<img id="popup-image" class="popup-photo">
+
+<p id="popup-text"></p>
+
+<audio id="popup-audio" controls>
+<source id="popup-audio-source" src="" type="audio/mpeg">
+</audio>
+
 </div>
 
-<script src="script.js"></script>
+</div>
 
-</body>
-</html>
+
+<script>
+
+function openPopup(title,image,text,audio){
+
+document.getElementById("popup-title").innerText = title;
+
+document.getElementById("popup-image").src = image;
+
+document.getElementById("popup-text").innerText = text;
+
+document.getElementById("popup-audio-source").src = "audio/" + audio;
+
+document.getElementById("popup-audio").load();
+
+document.getElementById("popup").style.display = "flex";
+
+}
+
+function closePopup(){
+
+document.getElementById("popup").style.display = "none";
+
+document.getElementById("popup-audio").pause();
+
+}
+
+</script>
