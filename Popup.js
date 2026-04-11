@@ -1,3 +1,5 @@
+let fadeInterval; 
+
 function openPopup(title, image, text, audioFile) {
   document.getElementById("popup").style.display = "flex";
 
@@ -8,23 +10,40 @@ function openPopup(title, image, text, audioFile) {
   const audioPlayer = document.getElementById("popup-audio");
   const audioSource = document.getElementById("popup-audio-source");
 
+  clearInterval(fadeInterval);
+
   if (audioFile) {
-    audioSource.src = audioFile; // fixed
-    audioPlayer.style.display = "block";
+    audioSource.src = audioFile;
     audioPlayer.load();
+    audioPlayer.style.display = "block";
+
+    
+    audioPlayer.volume = 0;
+    audioPlayer.play();
+
+   
+    fadeInterval = setInterval(() => {
+      if (audioPlayer.volume < 1) {
+        audioPlayer.volume += 0.05;
+      } else {
+        clearInterval(fadeInterval);
+      }
+    }, 100);
+
   } else {
     audioPlayer.style.display = "none";
     audioSource.src = "";
-    audioPlayer.load();
   }
 }
 
 function closePopup() {
-  const popup = document.getElementById("popup");
+  document.getElementById("popup").style.display = "none";
+
   const audioPlayer = document.getElementById("popup-audio");
 
   audioPlayer.pause();
   audioPlayer.currentTime = 0;
 
-  popup.style.display = "none";
+  // stop fading
+  clearInterval(fadeInterval);
 }
