@@ -74,6 +74,7 @@ body {
   background: rgba(0,0,0,0.6);
   justify-content: center;
   align-items: center;
+  padding: 30px
 }
 
 .popup-content {
@@ -122,8 +123,8 @@ audio {
   overflow: hidden;
   display: flex;
   justify-content: center;
-  gap: 100px;
-  padding: 1000px;
+  gap: 10px;
+  padding: 10px;
   position: sticky;
   top: 0;
   z-index: 1000;
