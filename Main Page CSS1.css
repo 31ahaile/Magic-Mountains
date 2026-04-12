@@ -123,7 +123,7 @@ audio {
   display: flex;
   justify-content: center;
   gap: 10px;
-  padding: 10px;
+  padding: 30px;
   position: sticky;
   top: 0;
   z-index: 1000;
