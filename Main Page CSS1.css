@@ -122,8 +122,8 @@ audio {
   overflow: hidden;
   display: flex;
   justify-content: center;
-  gap: 10px;
-  padding: 30px;
+  gap: 100px;
+  padding: 1000px;
   position: sticky;
   top: 0;
   z-index: 1000;
