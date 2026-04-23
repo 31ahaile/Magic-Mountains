@@ -2,9 +2,10 @@
 <html>
 <head>
   <title>Map Test</title>
-
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
  
-  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin=""/>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
 
   <style>
     body {
@@ -25,7 +26,6 @@
     }
   </style>
 
-  <meta name="referrer" content="origin" />
 
 </head>
 
@@ -36,17 +36,17 @@
 <div id="map"></div>
 
 
-<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
 
 <script>
 
   const map = L.map('map').setView([30, -20], 2);
 
  
-  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+  L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    referrerPolicy: 'strict-origin-when-cross-origin',
+    attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
     maxZoom: 18,
   }).addTo(map);
-
  
   const places = [
     {
