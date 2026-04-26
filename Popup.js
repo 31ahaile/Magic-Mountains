@@ -1,7 +1,8 @@
-let fadeInterval; 
+let fadeInterval;
 
 function openPopup(title, image, text, audioFile) {
-  document.getElementById("popup").style.display = "flex";
+  // ✅ use classList instead of style.display
+  document.getElementById("popup").classList.add("active");
 
   document.getElementById("popup-title").innerText = title;
   document.getElementById("popup-image").src = image;
@@ -17,15 +18,14 @@ function openPopup(title, image, text, audioFile) {
     audioPlayer.load();
     audioPlayer.style.display = "block";
 
-    
     audioPlayer.volume = 0;
     audioPlayer.play();
 
-   
     fadeInterval = setInterval(() => {
-      if (audioPlayer.volume < 1) {
-        audioPlayer.volume += 0.05;
+      if (audioPlayer.volume < 0.95) {       
+        audioPlayer.volume += 0.05;   
       } else {
+        audioPlayer.volume = 1;              
         clearInterval(fadeInterval);
       }
     }, 100);
@@ -37,13 +37,13 @@ function openPopup(title, image, text, audioFile) {
 }
 
 function closePopup() {
-  document.getElementById("popup").style.display = "none";
+
+  document.getElementById("popup").classList.remove("active");
 
   const audioPlayer = document.getElementById("popup-audio");
 
   audioPlayer.pause();
   audioPlayer.currentTime = 0;
 
-  // stop fading
   clearInterval(fadeInterval);
 }
