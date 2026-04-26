@@ -72,11 +72,13 @@ body {
   width: 100%;
   height: 100%;
   background: rgba(0,0,0,0.6);
-  display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 2000; /* below navbar */
 }
+
+/* ✅ shown only when JS adds .active */
+.popup.active { display: flex; }
+
 .popup-content {
   background: white;
   padding: 30px;
@@ -85,8 +87,9 @@ body {
   text-align: center;
   position: relative;
   box-shadow: 0 10px 30px rgba(0,0,0,0.25);
-  animation: fadeIn 0.3s ease; /* fixed name */
-  margin-top: 40px;
+  animation: fadeIn 0.3s ease; 
+  max-height: 85vh;    
+  overflow-y: auto;    
 }
 
 .popup-photo {
@@ -128,7 +131,6 @@ audio {
   padding: 10px;
   position: sticky;
   top: 0;
-  z-index: 3000; /* ensures it stays above everything */
   color: rgb(87, 214, 221)
 }
 
