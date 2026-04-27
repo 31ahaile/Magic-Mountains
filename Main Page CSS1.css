@@ -149,10 +149,11 @@ audio {
 
   .photo {
     width: 75%;
-    height: auto;
+    height: 85%;
   }
 
   .popup-content {
-    width: 85%;
+    width: 90%;
+    height: 85%;
   }
 }
